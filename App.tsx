@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import AppLayout from './AppLayout';
+import AppLayout from './src/components/AppLayout';
 import Offline from './src/components/Offline';
 import { NetworkProvider } from 'react-native-offline';
 import { QueryClient, QueryClientProvider } from 'react-query';
