@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { ActivityIndicator, Colors, Text } from "react-native-paper";
 import { useIsConnected } from "react-native-offline";
+
 import FeedScreen from "../screens/FeedScreen";
 
 const Offline = () => {

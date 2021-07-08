@@ -36,7 +36,7 @@ const Item = ({
       <Text>{hyperdrive_rating}</Text>
       <Text>{cost_in_credits}</Text>
     </Card.Content>
-    <Card.Cover source={{ uri: "https://picsum.photos/" }} />
+    <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
   </Card>
 );
 const App = () => {

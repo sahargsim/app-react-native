@@ -1,7 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import {Card, Title, Paragraph } from "react-native-paper";
-
+import { Card, Title, Paragraph } from "react-native-paper";
 import { storiesOf } from "@storybook/react-native";
 
 storiesOf("Card", module).add("default", () => (

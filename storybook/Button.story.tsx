@@ -49,10 +49,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginHorizontal: 16,
   },
-  title: {
-    textAlign: "center",
-    marginVertical: 8,
-  },
   fixToText: {
     flexDirection: "row",
     justifyContent: "space-between",

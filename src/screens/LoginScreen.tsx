@@ -1,15 +1,23 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 import FormInput from "../components/FormInput";
 import Header from "../components/Header";
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
+  const handleTerms = () => {
+    navigation.navigate("Terms");
+  };
   return (
     <View style={styles.glob}>
       <Header />
       <FormInput />
-      <Text style={styles.textFooter}>Read Conditions and Tearms</Text>
+      <TouchableOpacity onPress={handleTerms}>
+        <Text style={styles.textFooter}>Read Conditions and Tearms</Text>
+      </TouchableOpacity>
     </View>
   );
 }
