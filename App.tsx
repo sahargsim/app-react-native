@@ -1,22 +1,10 @@
-import React from 'react';
-import { Text, View } from 'react-native';
-import AppLayout from './src/components/AppLayout';
-import Offline from './src/components/Offline';
-import { NetworkProvider } from 'react-native-offline';
-import { QueryClient, QueryClientProvider } from 'react-query';
-const queryClient = new QueryClient();
+import RootScreen from "./src/screens/RootScreen";
+import StorybookUIRoot from "./storybook";
 
-const App = () => {
+// Should we show storybook instead of our app?
+//
+// ⚠️ Leave this as `false` when checking into git.
+const SHOW_STORYBOOK = false;
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <NetworkProvider>
-        <AppLayout title="Starships" >
-          <Offline/>
-        </AppLayout>
-      </NetworkProvider>
-    </QueryClientProvider>
-  );
-};
-
-export default App;
+const UI = SHOW_STORYBOOK && __DEV__ ? StorybookUIRoot : RootScreen;
+export default UI;

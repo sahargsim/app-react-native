@@ -1,22 +1,22 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { ActivityIndicator, Colors, Text } from 'react-native-paper';
-import { QueryClientProvider,QueryClient } from 'react-query';
-import FeedScreen from '../screens/FeedScreen';
-import { useIsConnected } from 'react-native-offline';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { ActivityIndicator, Colors, Text } from "react-native-paper";
+import { useIsConnected } from "react-native-offline";
+import FeedScreen from "../screens/FeedScreen";
 
 const Offline = () => {
-    const isConnected = useIsConnected();
+  const isConnected = useIsConnected();
   return (
-     // La methode isConnected
+    // La methode isConnected
     <View style={styles.container}>
-        
-        {/*{!isConnected ? (
-            <FeedScreen/>
-        ) : (  */}
-        
-        <Text style={styles.message}>Offline, reconnection in progress ...<ActivityIndicator/></Text>
-        {/*)}*/}
+      {isConnected ? (
+        <FeedScreen />
+      ) : (
+        <Text style={styles.message}>
+          Offline, reconnection in progress ...
+          <ActivityIndicator />
+        </Text>
+      )}
     </View>
   );
 };
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     //position: 'absolute',
     top: 55,
-    width: '90%',
+    width: "90%",
     borderRadius: 10,
     backgroundColor: Colors.red100,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   message: {
     color: Colors.red800,

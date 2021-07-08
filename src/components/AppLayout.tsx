@@ -1,10 +1,6 @@
 import React, { ReactNode } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { Colors, Headline } from "react-native-paper";
-
-// Add a `NetworkProvider
-//import { NetworkProvider } from 'react-native-offline';
-
 interface Props {
   title: string;
   children?: ReactNode;
@@ -13,7 +9,6 @@ interface Props {
 
 const AppLayout = ({ title, children, withFooter = false }: Props) => {
   return (
-    
     <ScrollView style={styles.container}>
       <Headline style={styles.headerText}>{title}</Headline>
       {children}

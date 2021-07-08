@@ -1,16 +1,14 @@
-import React from 'react';
-import { View,StyleSheet } from "react-native";
-import { Text } from "react-native-paper"
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text } from "react-native-paper";
 
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text
-        style={styles.header}
-      > Hi, Open Here</Text>
+      <Text style={styles.header}> Hi, Open Here</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -21,7 +19,7 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     textAlign: "center",
     marginBottom: 12,
-    backgroundColor:'#8a2be2',
+    backgroundColor: "#8a2be2",
   },
 });
 export default Header;
