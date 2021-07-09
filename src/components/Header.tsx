@@ -2,24 +2,27 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Text } from "react-native-paper";
 
+import { theme } from "../theme/theme";
+
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}> Hi, Open Here</Text>
+      <Text style={styles.header}>Welcome to My App</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 24,
+    width: "100%",
   },
   header: {
-    fontSize: 15,
-    lineHeight: 21,
+    marginBottom: 100,
+    fontSize: 25,
+    lineHeight: 50,
     textAlign: "center",
-    marginBottom: 12,
     backgroundColor: "#8a2be2",
+    color: theme.colors.textHeader,
   },
 });
 export default Header;

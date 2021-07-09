@@ -1,29 +1,16 @@
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  View,
-  TextInput,
-  TouchableOpacity,
-  Text,
-} from "react-native";
+import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { useNavigation } from "@react-navigation/native";
-
-import { theme } from "../theme/theme";
 
 const FormInput = () => {
   const [pwdVisibility, setPwdVisibility] = useState(false);
   const toggleEyeVisible = () => {
     setPwdVisibility(!pwdVisibility);
   };
-  const navigation = useNavigation();
-  navigation.navigate("Starships");
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.textLogin}>Login</Text>
+    <View>
       <TextInput
         style={styles.inputText}
         placeholder="Email..."
@@ -44,7 +31,7 @@ const FormInput = () => {
           )}
         </TouchableOpacity>
       </View>
-      <Button style={styles.buttonLogin} onPress={() => navigation.goBack()}>
+      <Button style={styles.buttonLogin} color={"#8a2be2"}>
         Login
       </Button>
     </View>
@@ -52,38 +39,27 @@ const FormInput = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-
-  textLogin: {
-    fontSize: 20,
-    textAlign: "center",
-    color: theme.colors.text,
-    fontWeight: "bold",
-  },
   pwdStyle: {
     position: "relative",
     flexDirection: "row",
   },
+
   inputText: {
     height: 50,
-    color: theme.colors.textInput,
-    marginTop: theme.spacing.m,
-    borderWidth: 1,
-    width: "100%",
+    color: "#6495ed",
+    margin: 20,
+    borderWidth: 2,
   },
   eyeIcon: {
     position: "absolute",
-    top: "50%",
-    right: 15,
+    right: 0,
   },
   buttonLogin: {
-    marginTop: theme.spacing.m,
-    backgroundColor: "#ffd700",
-    width: "100%",
-    textAlign: "center",
+    margin: 24,
+    backgroundColor: "#8a2be2",
+    height: 50,
+    marginTop: 20,
+    width: 150,
   },
 });
 export default FormInput;

@@ -24,11 +24,12 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   glob: {
-    margin: "20%",
+    width: "100%",
   },
   textFooter: {
     margin: 24,
     fontSize: 18,
-    color: "#ccc",
+    color: "#a9a9a9",
+    textAlign: "center",
   },
 });
