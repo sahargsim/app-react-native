@@ -3,6 +3,8 @@ import { View, Text, Image, ScrollView } from "react-native";
 import { Appbar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
+import { theme } from "../theme/theme";
+
 // We need to use this props screen `{navigation}`
 const TermsScreen = () => {
   const navigation = useNavigation();
@@ -14,6 +16,12 @@ const TermsScreen = () => {
         <Appbar.Content title="Terms and Conditions" />
       </Appbar.Header>
       <ScrollView style={{ padding: 32 }}>
+        <Image
+          style={{ width: 350, height: 350, marginVertical: 30 }}
+          source={{
+            uri: "https://cdn.dribbble.com/users/1018933/screenshots/2739791/terms_and_conditions.gif",
+          }}
+        />
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
           sodales at metus ac fermentum. Nulla eu nibh lorem. Mauris
@@ -331,14 +339,17 @@ const TermsScreen = () => {
           erat, fringilla non mi quis, sagittis dapibus tortor. Suspendisse
           tincidunt libero libero.
         </Text>
-        <Image
-          style={{ width: 250, height: 250, marginVertical: 32 }}
-          source={{
-            uri: "https://media.giphy.com/media/krkrHAEodHgzP72rTI/giphy.gif",
-          }}
-        />
 
-        <Text style={{ marginBottom: 128 }}>Good Job!</Text>
+        <Text
+          style={{
+            marginBottom: 128,
+            color: theme.colors.text,
+            fontSize: 36,
+            textAlign: "center",
+          }}
+        >
+          Good Job!
+        </Text>
       </ScrollView>
     </View>
   );

@@ -1,14 +1,9 @@
 import * as React from "react";
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  StatusBar,
-  FlatList,
-} from "react-native";
+import { SafeAreaView, StyleSheet, Text, FlatList } from "react-native";
 import { Card } from "react-native-paper";
 
 import { useStarships } from "../hooks/useStarships";
+import { theme } from "../theme/theme";
 interface ItemProps {
   name: string;
   model: string;
@@ -28,15 +23,15 @@ const Item = ({
   hyperdrive_rating,
   cost_in_credits,
 }: ItemProps) => (
-  <Card>
+  <Card style={styles.cardItem}>
     <Card.Title title={name} />
+    <Card.Cover source={{ uri: "https://picsum.photos/800" }} />
     <Card.Content>
-      <Text>{model}</Text>
-      <Text>{crew}</Text>
-      <Text>{hyperdrive_rating}</Text>
-      <Text>{cost_in_credits}</Text>
+      <Text style={styles.cardItemText}>{model}</Text>
+      <Text style={styles.cardItemText}>{crew}</Text>
+      <Text style={styles.cardItemText}>{hyperdrive_rating}</Text>
+      <Text style={styles.cardItemText}>{cost_in_credits}</Text>
     </Card.Content>
-    <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
   </Card>
 );
 const App = () => {
@@ -51,11 +46,11 @@ const App = () => {
     />
   );
 
-  if (isLoading) return <Text>isLoading....</Text>;
+  if (isLoading) return <Text style={styles.isLoading}>isLoading....</Text>;
   if (error) return <Text>Error....</Text>;
 
   return (
-    <SafeAreaView style={styles.Container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={data.results}
         renderItem={renderItem}
@@ -66,9 +61,22 @@ const App = () => {
 };
 
 const styles = StyleSheet.create({
-  Container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
+  isLoading: {
+    marginTop: 128,
+    color: theme.colors.text,
+    fontSize: 36,
+    textAlign: "center",
+  },
+  container: {
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  cardItem: {
+    margin: theme.spacing.m,
+  },
+  cardItemText: {
+    textAlign: "center",
+    color: theme.colors.textInput,
   },
 });
 

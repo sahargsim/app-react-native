@@ -19,7 +19,9 @@ const FormInput = () => {
     setPwdVisibility(!pwdVisibility);
   };
   const navigation = useNavigation();
-  navigation.navigate("Starships");
+  const handleLogin = () => {
+    navigation.navigate("Starships");
+  };
 
   return (
     <View style={styles.container}>
@@ -44,7 +46,7 @@ const FormInput = () => {
           )}
         </TouchableOpacity>
       </View>
-      <Button style={styles.buttonLogin} onPress={() => navigation.goBack()}>
+      <Button style={styles.buttonLogin} onPress={handleLogin}>
         Login
       </Button>
     </View>
