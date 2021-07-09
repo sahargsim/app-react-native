@@ -1,19 +1,16 @@
 import React from "react";
 import { View, Text, Image, ScrollView } from "react-native";
 import { Appbar } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 
 // We need to use this props screen `{navigation}`
 const TermsScreen = () => {
-  function goBack() {
-    // We need to use this props screen `{navigation}`
-    // eslint-disable-next-line no-alert
-    alert("goBack pressed!");
-  }
+  const navigation = useNavigation();
 
   return (
     <View>
       <Appbar.Header>
-        <Appbar.BackAction onPress={goBack} />
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
         <Appbar.Content title="Terms and Conditions" />
       </Appbar.Header>
       <ScrollView style={{ padding: 32 }}>
